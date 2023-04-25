@@ -5,14 +5,14 @@ const AppError = require("../utils/AppError");
 class NotesController {
     async create(request, response) {
         const { title, description, tags, rating } = request.body;
-        const { user_id } = request.params;
+        const user_id  = request.user.id;
 
         if(rating < 1 || rating > 5){
             throw new AppError("Digite um número de 1 a 5 ");  
             
         }
         
-        const [note_id] = await knex("notes").insert({
+        const [ note_id ]= await knex("notes").insert({
             title,
             description,
             rating,
@@ -34,7 +34,7 @@ class NotesController {
 
         await knex("tags").insert(tagsInsert);
 
-        response.json();
+        return response.json();
     }
 
     async show(request, response) {
@@ -63,7 +63,8 @@ class NotesController {
     }
 
     async index(request, response) {
-        const {title, user_id, tags} = request.query;
+        const {title, tags} = request.query;
+        const user_id = request.user.id
 
         let notes;
 
@@ -76,6 +77,8 @@ class NotesController {
              "notes.id",
              "notes.title",
              "notes.user_id",
+             "notes.description",
+             "notes.rating",
        
             ])
             .where("notes.user_id", user_id)
