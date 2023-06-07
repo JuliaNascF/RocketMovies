@@ -10,24 +10,6 @@ This is a movie database application built with Node.js and SQL. It allows users
 - Cascading deletion to ensure tags are deleted when a movie is deleted
 - JWT-based authentication for user authentication
 
-## Requirements
-
-Make sure you have the following software installed before running the application:
-
-- Node.js (version X.X.X)
-- SQL database (e.g., MySQL, PostgreSQL)
-
-## Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/movie-database.git
-
-Aqui está um exemplo de um arquivo README em inglês para uma aplicação em Node.js usando SQL, onde o usuário pode cadastrar filmes, preencher informações sobre eles (nome, descrição, nota) e adicionar tags relacionadas:
-
-markdown
-Copy code
 # Movie Database Application
 
 This is a movie database application built with Node.js and SQL. It allows users to register movies, provide information such as name, description, and rating, and associate tags with each movie.
@@ -41,12 +23,6 @@ This is a movie database application built with Node.js and SQL. It allows users
 - Cascading deletion to ensure tags are deleted when a movie is deleted
 - JWT-based authentication for user authentication
 
-## Requirements
-
-Make sure you have the following software installed before running the application:
-
-- Node.js (version X.X.X)
-- SQL database (e.g., MySQL, PostgreSQL)
 
 ## Usage
 - Register a new user account.
